@@ -8,6 +8,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,11 +25,11 @@ public class ReadDataFromXls {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 		// read xls data
-		String filepath = "C:\\Users\\Admin\\eclipse-workspace\\com.bpositive\\src\\test\\resources\\data1.xlsx";
+		String filepath = "C:\\Users\\Admin\\eclipse-workspace\\com.bpositive\\src\\test\\resources\\New XLSX Worksheet.xlsx";
 
 		FileInputStream fis = new FileInputStream(filepath);
-		Workbook workbook = new HSSFWorkbook(fis);
-		Sheet sheet = workbook.getSheet("data1");
+		Workbook workbook = WorkbookFactory.create(fis);
+		Sheet sheet = workbook.getSheet("New XLSX Worksheet.xlsx");
 		
 		
 		
